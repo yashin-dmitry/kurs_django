@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Dashboard</h1>
+<div class="stats">
+    <div class="stat-item">
+        <h2>Total Mailings</h2>
+        <p>{{ total_mailings }}</p>
+    </div>
+    <div class="stat-item">
+        <h2>Active Mailings</h2>
+        <p>{{ active_mailings }}</p>
+    </div>
+    <div class="stat-item">
+        <h2>Unique Clients</h2>
+        <p>{{ unique_clients }}</p>
+    </div>
+</div>
+<div class="actions">
+    <a href="{% url 'client_list' %}">Manage Clients</a>
+    <a href="{% url 'message_list' %}">Manage Messages</a>
+    <a href="{% url 'mailing_list' %}">Manage Mailings</a>
+    <a href="{% url 'send_mailing_form' %}">Send Mailing</a>
+    <a href="{% url 'register' %}">Register</a>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Mailing Attempts for {{ mailing.message.subject }}{% endblock %}
+
+{% block content %}
+<h1>Mailing Attempts for {{ mailing.message.subject }}</h1>
+<ul>
+    {% for attempt in attempts %}
+        <li>{{ attempt.attempt_time }} - {{ attempt.status }} - {{ attempt.server_response }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'mailing_list' %}">Back to Mailing List</a>
+{% endblock %}

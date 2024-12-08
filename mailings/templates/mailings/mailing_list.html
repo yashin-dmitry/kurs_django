@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Mailings{% endblock %}
+
+{% block content %}
+<h1>Mailings</h1>
+<a href="{% url 'mailing_create' %}">Add Mailing</a>
+<ul>
+    {% for mailing in mailings %}
+        <li>{{ mailing.status }} - {{ mailing.message.subject }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
